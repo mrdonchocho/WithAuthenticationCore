@@ -1,0 +1,36 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = "_LayoutAccount";
+}
+
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="form-login text-center">
+                <h1 class='text-white'>Register Form</h1>
+                <br>
+                <h4>CREATE A POWER ACCOUNT</h4>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control input-sm chat-input" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control input-sm chat-input" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control input-sm chat-input" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">REGISTER <i class="fa fa-sign-in"></i></button>
+                </div>
+                <div class="form-group">
+                    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">I have an account</a>
+                    <br />
+                </div>
+            </div>
+        </form>
